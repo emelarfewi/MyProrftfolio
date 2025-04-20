@@ -75,7 +75,7 @@ nav a:hover::after {
     border: 5px solid #FFF7F8;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     position: relative;
-    background: url('images/logo.jpeg') center/cover;
+    background: url('images/logo1.jpeg') center/cover;
     margin-bottom: 2rem;
 }*/
 .floral-frame {

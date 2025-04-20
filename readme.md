@@ -8,8 +8,7 @@ This portfolio showcases my creative work, current projects, and the values I br
 
 ## 🌼 Live Preview
 
-✨ [Visit Hope in Progress](https://your-portfolio-link.com)  
-_(Replace with your actual URL if hosted)_
+✨ [Visit Hope in Progress](https://hope-inprogress.vercel.app/)  
 
 ---
 

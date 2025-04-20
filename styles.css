@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #FFF7F8;
+    color: #4A4A4A;
+    overflow-x: hidden;
+}
+/* Header */
+header {
+    background: linear-gradient(90deg, #FFE1E9, #E3DFFD);
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: #FF6F91;
+    font-weight: 700;
+}
+nav a {
+    margin-left: 2rem;
+    color: #4A4A4A;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+nav a:hover {
+    color: #FF6F91;
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: url("data:image/svg+xml,%3Csvg width='10' height='10' viewBox='0 0 10 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0L6.12257 3.87743H10L7.5 6.12257L8.62257 10L5 7.5L1.37743 10L2.5 6.12257L0 3.87743H3.87743L5 0Z' fill='%23FF6F91'/%3E%3C/svg%3E") repeat-x;
+    transition: width 0.3s ease;
+}
+nav a:hover::after {
+    width: 100%;
+}
+/* Intro Section */
+.intro-section {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FFE1E9;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+#heart-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #FFF7F8;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: url('images/logo.jpeg') center/cover;
+    margin-bottom: 2rem;
+}
+.floral-frame {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 220px;
+    height: 220px;
+    background: url("data:image/svg+xml,%3Csvg width='220' height='220' viewBox='0 0 220 220' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='110' cy='110' r='105' stroke='%23D5F5E3' stroke-width='10' stroke-dasharray='5,5'/%3E%3C/svg%3E") center/cover;
+}
+.intro-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: #FF6F91;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.intro-section p {
+    font-size: 1.125rem;
+    color: #4A4A4A;
+    text-align: center;
+    max-width: 600px;
+    line-height: 1.6;
+}
+/* Projects Section */
+.projects-section {
+    padding: 6rem 3rem;
+    background: #FFF7F8;
+}
+.projects-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #FF6F91;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.project-card {
+    background: #E3DFFD;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: calc(var(--delay) * 0.2s);
+}
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1), 0 0 20px rgba(255, 111, 145, 0.3);
+}
+.project-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: #4A4A4A;
+    margin-bottom: 1rem;
+}
+.project-card p {
+    font-size: 1rem;
+    color: #6B7280;
+}
+
+.projects-description {
+    font-size: 1.125rem;
+    color: #4A4A4A;
+    text-align: center;
+    max-width: 800px;
+    margin: 2rem auto;
+    line-height: 1.6;
+}
+
+.stay-tuned {
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #FF6F91;
+    font-weight: 600;
+    border-right: 3px solid #FF6F91;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(20) 1s forwards, blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 3rem;
+    background: #D5F5E3;
+    position: relative;
+    overflow: hidden;
+}
+.wave-bg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23FFF7F8' fill-opacity='1' d='M0,192L48,181.3C96,171,192,149,288,160C384,171,480,213,576,213.3C672,213,768,171,864,149.3C960,128,1056,128,1152,154.7C1248,181,1344,235,1392,261.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+}
+.contact-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #FF6F91;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+.contact-links a {
+    font-size: 1.5rem;
+    color: #FF6F91;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+.contact-links a:hover {
+    transform: scale(1.2);
+    color: #FF8AB5;
+}
+.contact-button {
+    display: block;
+    margin: 2rem auto 0;
+    background: #FF6F91;
+    color: #FFF7F8;
+    padding: 0.75rem 2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+}
+.contact-button:hover {
+    background: #FF8AB5;
+    transform: translateY(-2px);
+}
+.contact-button::after {
+    content: '💌';
+    margin-left: 0.5rem;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+@keyframes heartbeat {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.2); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.2); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
